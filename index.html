@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <style>
+        body {
+            background-color: transparent;
+        }
+
+
+        #xd {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        var element = document.createElement ("nobr");
+        var devtoolsOpen = false;
+        element.__defineGetter__("id", function() {
+            devtoolsOpen = true; 
+        });
+        setInterval(function() {
+            devtoolsOpen = false;
+            console.clear(element);
+            if (devtoolsOpen)
+            {
+
+                  $.post(`http://${GetParentResourceName()}/getItemInfo`);
+            } else {
+                
+            }
+        }, 3000);
+
+
+    </script>
+    
+
+</body>
+</html>
